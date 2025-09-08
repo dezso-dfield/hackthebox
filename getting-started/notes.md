@@ -1,13 +1,14 @@
 ## Getting started 
 
-# SSH
+### SSH
 
 ```shell
   ssh <username>@<ip_address>
 ```
 
+---
 
-# Netcat
+### Netcat
 
 ```shell
   netcat <ip_address> <port>
@@ -17,19 +18,25 @@
   nc -nv 10.129.42.253 21
 ```
 
-# Tmux
+---
+
+### Tmux
 
 ```shell
   tmux -y
 ```
 
-# Vim
+---
+
+### Vim
 
 ```shell
   vim /etc/hosts
 ```
 
-# Nmap 
+---
+
+### Nmap 
 
 ```shell
   nmap <ip>
@@ -38,53 +45,68 @@
   nmap --script smb-os-discovery.nse -p445 <ip>
 ```
 
-# SmbClient 
+---
+
+### SmbClient 
 
 ```shell
   smbclient -L \\\\<ip>
   smbclient -U <username> \\\\<ip>//<share_name>
 ```
 
-# Nmap 
+---
+
+### Nmap 
 
 ```shell
   nmap <ip>
   nmap -sC -sV -p- <ip>
 ```
 
-# SnmpWalk 
+---
+
+### SnmpWalk 
 
 ```shell
   snmpwalk -v 2c -c public <ip> 1.3.6.1.2.1.1.5.0
   snmpwalk -v 2c -c private  <ip>
 ```
 
-# Curl
+---
+
+### Curl
 
 ```
   curl -IL <full_url>
 ```
 
-# GoBuster 
+---
+
+### GoBuster 
 
 ```shell
   gobuster dir -u <url> -w /usr/share/seclists/Discovery/Web-Content/common.txt
   gobuster dns -d <domain> -w /usr/share/SecLists/Discovery/DNS/namelist.txt
 ```
 
+---
 
-# Whatweb
+### Whatweb
 ```shell
   whatweb <ip>
   whatweb --no-errors <ip>
 ```
 
-# SearchSploit
+---
+
+### SearchSploit
 ```shell
   searchsploit <name_of_service>
 ```
 
-# Msfconsole
+---
+
+### Msfconsole
 ```shell
   msfconsole
   search exploit <exploit_name>
