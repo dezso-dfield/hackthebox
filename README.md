@@ -1,2 +1,2 @@
 # academy.hackthebox.com
-My HackTheBox Journey becoming a PenetrationTesting Specialist After completing TryHackme
+My HackTheBox Journey becoming a Pentester After completing TryHackme
