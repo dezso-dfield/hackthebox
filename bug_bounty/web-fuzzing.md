@@ -51,6 +51,18 @@ wenum: --sc, --hc, --hl, --sl, --hw, --sw, --hs, --ss, --hr, --sr, --filter/--ha
 feroxbuster: -s, -S, -X
 ```
 
+### Web APIs
+
+```bash
+git clone https://github.com/PandaSt0rm/webfuzz_api.git
+cd webfuzz_api
+pip3 install -r requirements.txt
+
+python3 api_fuzzer.py http://IP:PORT
+
+
+```
+
 ### Brute-forcing
 
 ```shell
